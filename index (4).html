@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pet na Pele – Daycare e Hotel para Cães</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff8f0;--card:#fff;--ink:#2b2a33;--mut:#6b6875;--pri:#ff7a3d;--sec:#12766e;--soft:#ffe9d6;--line:#f0dcc8;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17161c;--card:#22212a;--ink:#f3eee8;--mut:#a9a4b3;--soft:#2d2a36;--line:#38353f}}
+:root[data-theme="dark"]{--bg:#17161c;--card:#22212a;--ink:#f3eee8;--mut:#a9a4b3;--soft:#2d2a36;--line:#38353f}
+*{box-sizing:border-box;margin:0}html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{background:var(--bg);color:var(--ink);font:16px/1.65 Nunito,system-ui,sans-serif}
+h1,h2,h3,h4{font-family:Fredoka,Nunito,sans-serif;line-height:1.2}
+a{color:inherit}.wrap{max-width:1080px;margin:auto;padding:0 20px}
+header{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:66px;gap:12px}
+.logo{font:600 1.35rem Fredoka,sans-serif;text-decoration:none;color:var(--pri)}.logo span{color:var(--sec)}
+nav ul{list-style:none;padding:0;display:flex;gap:4px}nav li{position:relative}
+nav a,nav button{font:700 .92rem Nunito,sans-serif;padding:10px 12px;border-radius:10px;text-decoration:none;background:none;border:0;color:var(--ink);cursor:pointer;display:block}
+nav a:hover,nav button:hover,nav a.on{background:var(--soft)}
+.dd{display:none;position:absolute;top:100%;left:0;min-width:270px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:6px;box-shadow:0 12px 30px #0002}
+nav li:hover .dd,nav li:focus-within .dd{display:block}.dd a{font-weight:600}
+#burger,#theme{display:none;font-size:1.3rem;background:var(--soft);border:0;border-radius:10px;width:42px;height:42px;cursor:pointer;color:var(--ink)}
+#theme{display:block}.tools{display:flex;gap:8px;align-items:center}
+@media(max-width:860px){#burger{display:block}nav{position:fixed;inset:66px 0 0 0;background:var(--bg);padding:14px 20px;display:none;overflow:auto}nav.open{display:block}nav ul{flex-direction:column}.dd{display:block;position:static;box-shadow:none;border:0;padding-left:12px}}
+.hero{padding:70px 0 50px;display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center}
+@media(max-width:860px){.hero{grid-template-columns:1fr}}
+.hero h1{font-size:clamp(2rem,5vw,3.3rem)}.hero h1 em{font-style:normal;color:var(--pri)}
+.pill{display:inline-block;background:var(--soft);color:var(--sec);font-weight:800;font-size:.82rem;padding:6px 14px;border-radius:99px;margin-bottom:14px}
+.btn{display:inline-block;background:var(--pri);color:#fff;font-weight:800;padding:13px 24px;border-radius:99px;text-decoration:none;border:0;cursor:pointer;font-size:1rem;transition:.2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px #ff7a3d55}.btn.alt{background:var(--sec)}.btn.ghost{background:transparent;color:var(--ink);border:2px solid var(--line)}
+.blob{aspect-ratio:1;border-radius:42% 58% 55% 45%/50% 45% 55% 50%;background:linear-gradient(135deg,var(--pri),#ffc27a);display:grid;place-items:center;font-size:clamp(6rem,18vw,11rem);animation:morph 8s ease-in-out infinite}
+@keyframes morph{50%{border-radius:58% 42% 45% 55%/45% 55% 45% 55%;transform:rotate(4deg)}}
+section{padding:46px 0}.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;transition:.25s}
+a.card{text-decoration:none;display:block}.card:hover{transform:translateY(-5px);box-shadow:0 14px 30px #0001}
+.ico{font-size:2rem;margin-bottom:8px}.card h3{margin-bottom:6px}.card p,.mut{color:var(--mut)}
+.title{margin-bottom:22px}.title h2{font-size:clamp(1.6rem,3.5vw,2.3rem)}
+.page-h{padding:46px 0 10px}.page-h h1{font-size:clamp(1.9rem,4.5vw,2.8rem)}.crumb{font-size:.85rem;color:var(--mut);margin-bottom:8px}.crumb a{color:var(--pri)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;text-align:center}.stats b{display:block;font:600 2.4rem Fredoka;color:var(--pri)}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}.tab{font:700 .92rem Nunito;padding:10px 18px;border-radius:99px;border:2px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}.tab.on{background:var(--sec);border-color:var(--sec);color:#fff}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:26px}@media(max-width:760px){.two{grid-template-columns:1fr}}
+ul.ck{list-style:none;padding:0}ul.ck li{padding:6px 0 6px 30px;position:relative}ul.ck li:before{content:"🐾";position:absolute;left:0}
+details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px;margin-bottom:10px}summary{font-weight:800;cursor:pointer}details[open] summary{color:var(--pri);margin-bottom:6px}
+.tl{border-left:3px solid var(--pri);padding-left:20px}.tl div{margin-bottom:16px;position:relative}.tl div:before{content:"";position:absolute;left:-28px;top:6px;width:13px;height:13px;border-radius:50%;background:var(--pri)}
+.room{display:inline-block;background:var(--soft);padding:8px 14px;border-radius:12px;margin:4px;font-weight:600;cursor:default;transition:.2s}.room:hover{background:var(--pri);color:#fff;transform:scale(1.05)}
+.cta{background:linear-gradient(120deg,var(--sec),#1a9c91);color:#fff;border-radius:26px;padding:38px;text-align:center}.cta h2{margin-bottom:10px}.cta .btn{background:#fff;color:var(--sec);margin-top:12px}
+footer{background:var(--card);border-top:1px solid var(--line);margin-top:40px;padding:40px 0 24px}footer .grid{grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}footer h4{margin-bottom:6px;color:var(--pri)}footer p{font-size:.9rem;color:var(--mut)}
+.wa{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:60;background:#25d366;color:#fff;text-decoration:none;font-weight:800;padding:13px 20px;border-radius:99px;box-shadow:0 8px 24px #0004}
+.rv{opacity:0;transform:translateY(24px);transition:.7s}.rv.in{opacity:1;transform:none}
+#pets{position:fixed;bottom:calc(4px + env(safe-area-inset-bottom,0px));left:0;width:140px;z-index:40;pointer-events:none;will-change:transform}
+#pets svg{width:100%;display:block;transition:transform .25s;overflow:visible}#pets.back svg{transform:scaleX(-1)}
+#pets .leg,#pets .tail,#pets .ctail{transform-box:fill-box}#pets .leg{transform-origin:50% 0}#pets .tail{transform-origin:100% 100%}#pets .ctail{transform-origin:100% 100%;animation:sway 2s ease-in-out infinite alternate}
+.walk .leg{animation:step .32s ease-in-out infinite alternate}.walk .leg.o{animation-direction:alternate-reverse}
+.walk .bob{animation:bob .32s ease-in-out infinite alternate}.walk .tail{animation:wag .2s ease-in-out infinite alternate}
+@keyframes step{from{transform:rotate(-24deg)}to{transform:rotate(24deg)}}@keyframes bob{to{transform:translateY(-3px)}}@keyframes wag{to{transform:rotate(-20deg)}}@keyframes sway{to{transform:rotate(14deg)}}
+form.f{display:grid;gap:10px}form.f input,form.f select,form.f textarea{padding:12px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:inherit}
+</style>
+</head>
+<body>
+<header><div class="wrap bar">
+<a class="logo" href="#/">🐶 Pet na <span>Pele</span></a>
+<nav id="nav"><ul>
+<li><a href="#/">Home</a></li>
+<li><button>Pet na Pele ▾</button><div class="dd"><a href="#/sobre">Sobre o Pet na Pele</a><a href="#/quem-somos">Quem somos</a><a href="#/ea">E.A. Padrão Pet na Pele</a></div></li>
+<li><button>Unidades ▾</button><div class="dd"><a href="#/unidade-1">Unidade 1 – Chácara Santo Antônio</a><a href="#/unidade-2">Unidade 2 – Jardim Marajoara</a><a href="#/unidade-3">Unidade 3 – Consulado (cães pequenos)</a></div></li>
+<li><a href="#/day-care">Day Care</a></li><li><a href="#/hotel">Hotel</a></li>
+<li><button>Contatos ▾</button><div class="dd"><a href="#/contato/1">Unidade 1 – Chácara Santo Antônio</a><a href="#/contato/2">Unidade 2 – Jardim Marajoara</a><a href="#/contato/3">Unidade 3 – Consulado</a></div></li>
+<li><a href="#/noticias">Notícias</a></li>
+</ul></nav>
+<div class="tools"><button id="theme" title="Tema">🌓</button><button id="burger" aria-label="Menu">☰</button></div>
+</div></header>
+<main id="app"></main>
+<footer><div class="wrap"><div class="grid" id="foot"></div><p style="text-align:center;margin-top:26px">Pet na Pele © 2026 · Todos os direitos reservados · (11) 99348.4746 · contato@petnapele.com.br</p></div></footer>
+<div id="pets" aria-hidden="true"><svg viewBox="0 0 170 116" xmlns="http://www.w3.org/2000/svg">
+<g class="leg" ><rect x="46" y="82" width="10" height="28" rx="5" fill="#a8703a"/></g>
+<g class="leg o"><rect x="60" y="82" width="10" height="28" rx="5" fill="#a8703a"/></g>
+<g class="bob">
+<path class="tail" d="M38 68 Q20 56 26 42" stroke="#c98a4b" stroke-width="8" fill="none" stroke-linecap="round"/>
+<ellipse cx="82" cy="74" rx="46" ry="20" fill="#c98a4b"/>
+<circle cx="130" cy="62" r="19" fill="#c98a4b"/>
+<ellipse cx="119" cy="52" rx="7" ry="13" fill="#8a5a2b" transform="rotate(15 119 52)"/>
+<ellipse cx="146" cy="69" rx="11" ry="8" fill="#e8c9a0"/>
+<circle cx="154" cy="66" r="3.2" fill="#222"/><circle cx="136" cy="58" r="2.6" fill="#222"/>
+<path d="M142 76 q4 8 8 0" fill="#ff8fa3"/>
+<path class="ctail" d="M66 58 Q44 58 48 34" stroke="#8b8f9c" stroke-width="6" fill="none" stroke-linecap="round"/>
+<ellipse cx="82" cy="46" rx="15" ry="16" fill="#8b8f9c"/>
+<circle cx="86" cy="25" r="12" fill="#8b8f9c"/>
+<polygon points="76,18 78,5 85,14" fill="#8b8f9c"/><polygon points="88,14 95,5 97,19" fill="#8b8f9c"/>
+<polygon points="79,16 79,10 83,14" fill="#ffb3c1"/><polygon points="91,14 95,10 94,18" fill="#ffb3c1"/>
+<circle cx="82" cy="24" r="2.2" fill="#222"/><circle cx="92" cy="24" r="2.2" fill="#222"/><circle cx="87" cy="29" r="1.6" fill="#ff7a8f"/>
+<path d="M96 28h9M96 31l8 3M78 28h-8M78 31l-8 3" stroke="#222" stroke-width=".8"/>
+<ellipse cx="76" cy="60" rx="6" ry="3.5" fill="#a3a7b3"/><ellipse cx="90" cy="60" rx="6" ry="3.5" fill="#a3a7b3"/>
+</g>
+<g class="leg o"><rect x="100" y="82" width="10" height="28" rx="5" fill="#c98a4b"/></g>
+<g class="leg"><rect x="114" y="82" width="10" height="28" rx="5" fill="#c98a4b"/></g>
+</svg></div>
+<a class="wa" href="https://wa.me/5511993484746" target="_blank" rel="noopener">💬 Olá 👋 Podemos ajudá-lo?</a>
+
+<script>
+const U=[
+{n:1,nm:'Chácara Santo Antônio',end:'Rua Capitão Otávio Machado, 953',emoji:'🌳',hotel:true,
+ txt:'9 ambientes estruturados para receber seu cão com segurança, segregando alunos e hóspedes por porte e nível de energia, com sol ou chuva. Os cães ficam 100% livres, supervisionados de perto por equipe qualificada.',
+ rooms:[['Bosque','Área gramada com espaço sensorial para enriquecimento ambiental.'],['Pista de corrida','Para o gasto energético que eles adoram.'],['Praça','Atividades físicas, brincadeiras e E.A.'],['Elevado','Treinos comportamentais e recreação.'],['Laguinho','Refresco nos dias quentes; sem sol vira piscina de bolinhas.'],['Pousada','Descanso com cromoterapia e musicoterapia; vira quarto de hospedagem.'],['Sossego','Espaço coberto de relaxamento diário.'],['Espaço Coringa','Atividades em dias de chuva e dormitório de hóspedes.'],['Restaurante','Alimentação segura, dieta de cada cão seguida à risca.']],
+ maps:'https://www.google.com/maps/search/?api=1&query=R.+Cap.+Ot%C3%A1vio+Machado,+953,+S%C3%A3o+Paulo'},
+{n:2,nm:'Jardim Marajoara',end:'Rua Frei Canisio, 83 – Jd. Marajoara',emoji:'🏡',hotel:false,
+ txt:'Com mais de 600 m², fácil acesso às grandes avenidas, pátio externo arborizado e diversas áreas indoor para o cão se divertir, gastar energia e socializar. Cães 100% livres e supervisionados de perto.',
+ rooms:[['Pista','Gasto energético.'],['Praça','Área externa e coberta para atividades físicas, treinos e E.A.'],['Laguinho','Refresco no calor; vira piscina de bolinhas e feno em dias sem sol.'],['Coringa','Descanso com musicoterapia após o almoço e mais atividades.'],['Sossego','Descanso pós banho ou espera pelo tutor.'],['Restaurante','Alimentação segura e individualizada.']],
+ maps:'https://www.google.com/maps/search/?api=1&query=R.+Frei+Canisio,+83,+S%C3%A3o+Paulo'},
+{n:3,nm:'Consulado',end:'Rua da Paz, 909',emoji:'🐩',hotel:true,
+ txt:'Ambiente EXCLUSIVO para cães de pequeno porte, com a dinâmica diária de E.A. Padrão Pet na Pele e o lema do cão ser cão. Os pequenos contam com o tradicional laguinho, amplo ambiente coberto e pátio externo arborizado.',
+ rooms:[['Laguinho','Tradicional refresco da casa.'],['Ambiente coberto','Amplo, para o dia na creche e no hotel.'],['Pátio arborizado','Área externa para brincar e explorar.']],
+ maps:'https://www.google.com/maps/search/?api=1&query=Rua+da+Paz,+909,+S%C3%A3o+Paulo'}];
+const PRE=['Carteirinha de vacinação atualizada (V10 ou V8, Antirrábica, Tosse Canina e sugestão Giárdia)','Controle de pulgas e carrapatos obrigatório','Vermifugação a cada três meses ou exame coproparasitológico','Filhotes somente após todas as vacinas','Machos castrados após o sétimo mês de vida','Fêmeas no cio não frequentam o Day Care ou hotel','Alimentação fornecida pelo tutor','Cães em perfeitas condições de saúde e sem histórico de agressividade a cães ou pessoas','Não recebemos raças de guarda ou cães não socializados','Resultado positivo no dia experimental/avaliação comportamental é obrigatório'];
+const EA=[['🍖','Alimentar','“Trabalhar para comer”: tirar a comida do pote, jogos, obstáculos e brinquedos interativos que despertam o comportamento natural de buscar comida.'],['👃','Sensorial','Explorar olfato, audição, visão, tato e paladar: caçar alimentos e brinquedos, jogos de faro, petiscos congelados, diferentes texturas de piso.'],['🏃','Físico','Gasto energético, corridas, bolinhas, pega-pega e subir em superfícies diferentes.'],['🧠','Cognitivo','Estimulação mental, jogos de resolução de problemas, treinos de obediência e adestramento.'],['🐕','Social','Experiências positivas com outros cães e pessoas, afinal o cão é um animal social.']];
+const SV=[['🤝','Socialização','Vivência em matilha e convivência com outras pessoas.'],['🏊','Recreação','Gasto energético, brincadeiras e “laguinho” em dias de sol.'],['🧩','E. Ambiental','Estimulação mental e sensorial.'],['🩺','Prevenção','Inspeção da pele, busca por lesões, nódulos, dermatites e otites.'],['🍽️','Supervisão alimentar','Acompanhamento das refeições diárias no local.'],['😴','Relaxamento','Parte da rotina diária.'],['🛁','Higienização','Banho a seco antes do retorno para casa.'],['🎓','Educação','Introdução a comandos básicos.']];
+const NEWS=[['app','23/02/2025','📱','Comunicação via APP – Praticidade e Bem-Estar'],['adaptacao','24/02/2025','📅','Agende sua adaptação'],['requisitos','25/02/2025','📋','Pré-requisitos da creche e hotel']];
+const ph=(h)=>`<div class="wrap page-h"><div class="crumb"><a href="#/">Home</a> › ${h}</div><h1>${h}</h1></div>`;
+const cta=(t='Agende o dia experimental sem custo')=>`<section><div class="wrap"><div class="cta rv"><h2>${t}</h2><p>Avaliamos a saúde, o comportamento e a socialização do seu cão. Sem compromisso.</p><a class="btn" href="https://wa.me/5511993484746?text=Ol%C3%A1!%20Quero%20agendar%20o%20dia%20experimental" target="_blank" rel="noopener">Falar no WhatsApp</a></div></div></section>`;
+const pre=()=>PRE.map(p=>`<li>${p}</li>`).join('');
+const P={
+'':()=>`<div class="wrap hero"><div class="rv"><span class="pill">Daycare e Hotel para Cães</span><h1>O cão sendo <em>cão</em>, com muito carinho e rotina.</h1><p class="mut" style="margin:14px 0 22px">Somos o Pet na Pele, creche e hotel para cães que buscam bem-estar, equilíbrio e melhor qualidade de vida. Estrutura e rotina programada com atividades que estimulam o forrageio, o farejar, o gasto de energia e a socialização, sempre com supervisão.</p><a class="btn" href="#/day-care">Conheça o Day Care</a> <a class="btn ghost" href="#/unidade-1">Nossas unidades</a></div><div class="blob">🐕</div></div>
+<section><div class="wrap"><div class="stats card rv"><div><b data-n="3">0</b>unidades</div><div><b data-n="9">0</b>ambientes na Unidade 1</div><div><b data-n="600">0</b>m² no Marajoara</div><div><b data-n="2">0</b>atividades de E.A. por dia</div></div></div></section>
+<section><div class="wrap"><div class="title rv"><h2>Nossas 3 unidades</h2></div><div class="grid">${U.map(u=>`<a class="card rv" href="#/unidade-${u.n}"><div class="ico">${u.emoji}</div><h3>Unidade ${u.n} – ${u.nm}</h3><p>${u.end}</p>${u.n==3?'<p><b>Exclusiva para cães de pequeno porte</b></p>':''}</a>`).join('')}</div></div></section>
+<section><div class="wrap"><div class="title rv"><h2>Explore o Pet na Pele</h2></div><div class="grid"><a class="card rv" href="#/ea"><div class="ico">🧠</div><h3>E.A. Padrão Pet na Pele</h3><p>O que é?</p></a><a class="card rv" href="#/sobre"><div class="ico">💛</div><h3>Sobre o Pet na Pele</h3><p>Missão, visão e valores.</p></a><a class="card rv" href="#/quem-somos"><div class="ico">🐾</div><h3>Quem somos</h3><p>Conheça nossa história.</p></a></div></div></section>
+<section><div class="wrap"><div class="title rv"><h2>Destaques do Day Care</h2></div><div class="grid">${SV.map(s=>`<div class="card rv"><div class="ico">${s[0]}</div><h3>${s[1]}</h3><p>${s[2]}</p></div>`).join('')}</div><p class="mut rv" style="margin-top:14px">✨ Adaptação sem custo · 📱 Aplicativo para comunicação diária e aviso de chegada do tutor.</p></div></section>
+<section><div class="wrap"><div class="title rv"><h2>Notícias</h2></div><div class="grid">${NEWS.map(n=>`<a class="card rv" href="#/noticia/${n[0]}"><div class="ico">${n[2]}</div><p style="font-size:.8rem">Postado ${n[1]}</p><h3>${n[3]}</h3><p style="color:var(--pri);font-weight:800">Leia mais →</p></a>`).join('')}</div></div></section>${cta()}`,
+'sobre':()=>ph('Pet na Pele')+`<section><div class="wrap two"><div class="rv"><p>Um cão equilibrado precisa suprir suas necessidades fisiológicas e mentais, pode e deve se comportar como cão, brincar, socializar e desenvolver seus comportamentos naturais, garantindo qualidade de vida e harmonia para cães e tutores. É nisso que o Pet na Pele acredita e se estruturou para oferecer aos seus clientes caninos e humanos.</p></div><div class="blob" style="max-width:260px;font-size:6rem">🐶</div></div></section>
+<section><div class="wrap grid"><div class="card rv"><div class="ico">🎯</div><h3>Missão</h3><p>Proporcionar maior qualidade de vida aos cães, através da excelência nos serviços prestados e principalmente amor ao que fazemos.</p></div><div class="card rv"><div class="ico">🔭</div><h3>Visão</h3><p>Ser referência em serviços pet com comprovação da satisfação dos clientes, seus cães e nossos colaboradores.</p></div><div class="card rv"><div class="ico">💎</div><h3>Valores</h3><p>Respeito, equilíbrio, honestidade, transparência, foco e determinação, em um ambiente de bem-estar para animais, tutores e colaboradores.</p></div></div></section>`,
+'quem-somos':()=>ph('Quem Somos')+`<section><div class="wrap two"><div class="rv"><p>O Pet na Pele nasceu do amor do fundador <b>Glaucio</b> e sua esposa <b>Paula</b> pelos animais. Foram anos de amadurecimento, idealização e estudos para unir esse amor a um empreendimento que proporciona mais qualidade de vida aos animais, aliada à segurança e confiança de tutores e colaboradores.</p><p style="margin-top:12px">A ideia saiu do papel após cursos de adestramento, especialização em banho e tosa, monitor de creche canina e empreendedorismo para Day Care / Hotel.</p></div><div class="card rv"><h3>🐕 Linha do tempo</h3><div class="tl" style="margin-top:14px"><div><b>2014</b><br>Glaucio tatua o Pudim, o “pet na pele”.</div><div><b>2020</b><br>Nasce a 1ª unidade, na Chácara Santo Antônio.</div><div><b>Depois</b><br>Chega a Unidade do Jardim Marajoara.</div><div><b>Hoje</b><br>Terceira unidade, dedicada aos cães de pequeno porte.</div></div></div></div></section>
+<section><div class="wrap"><div class="card rv" style="text-align:center"><div class="ico">🍮</div><h3>Você sabe quem é o cãozinho da nossa logo?</h3><p>É o <b>Pudim</b>! Nosso pet, que nasceu conosco e foi eternizado na tatuagem que o Glaucio fez dele em 2014, se tornando o nosso “pet na pele”.</p></div></div></section>`,
+'ea':()=>ph('E.A. Padrão Pet na Pele')+`<section><div class="wrap"><div class="panel rv"><h3>Enriquecimento Ambiental</h3><p style="margin-top:8px">É a criação de um ambiente dinâmico e interativo que proporciona desafios físicos e mentais similares aos encontrados na natureza. Cães vivem em apartamentos e passam muito tempo sozinhos; sem atividade podem apresentar latidos em excesso, compulsões, comportamentos repetitivos, destruição de objetos, ansiedade de separação e apatia.</p><p style="margin-top:8px"><b>O que fazer?</b> Oferecer escolhas e expressão do comportamento natural: roer, farejar, procurar, correr. Um cão entretido é sinônimo de saúde.</p></div></div></section>
+<section><div class="wrap"><div class="title"><h2>Os 5 tipos de enriquecimento</h2></div><div class="tabs" id="eat">${EA.map((e,i)=>`<button class="tab ${i?'':'on'}" data-i="${i}">${e[0]} ${e[1]}</button>`).join('')}</div><div class="panel" id="eap"></div></div></section>
+<section><div class="wrap"><div class="card rv"><h3>🏅 O que é o E.A. Padrão Pet na Pele?</h3><p style="margin-top:8px">Em todas as unidades, a rotina diária inclui duas atividades de E.A., planejadas para englobar praticamente os cinco tipos em um único momento, estimulando o cão de forma global e deixando a brincadeira atrativa para todos. Assim criamos o conceito do <b>E.A. Padrão Pet na Pele</b>.</p></div></div></section>`,
+'day-care':()=>ph('Day Care')+`<section><div class="wrap two"><div class="rv"><p>Nossas unidades oferecem um ambiente confortável e seguro, com atividades guiadas de forma divertida e supervisionada. Respeitamos a particularidade de cada cão nas atividades diárias.</p><ul class="ck" style="margin-top:12px">${SV.slice(0,7).map(s=>`<li><b>${s[1]}:</b> ${s[2]}</li>`).join('')}</ul></div><div class="card rv"><h3>🕖 Funcionamento</h3><div class="tl" style="margin-top:14px"><div><b>Entrada</b><br>Segunda a sexta, das 7h às 10h</div><div><b>Saída</b><br>Segunda a sexta, das 17h às 19h30. Após 15 min de tolerância o cão fica hospedado e é cobrada a pernoite.</div><div><b>Fins de semana e feriados</b><br>Fechado, apenas hospedagem, priorizando clientes do Day Care.</div></div></div></div></section>
+<section><div class="wrap two"><div class="panel rv"><h3>🐾 Dia experimental, sem custo</h3><p style="margin-top:8px">Antes de ingressar, seu cão passa por um dia experimental (avaliação comportamental) para avaliarmos saúde, comportamento e socialização com a matilha. No fim do dia damos um feedback; sendo positivo, o primeiro passo está dado.</p></div><div class="panel rv"><h3>📱 Comunicação via APP</h3><p style="margin-top:8px">Receba como foi o dia, guarde o histórico de saúde e comportamento e marque que está a caminho: o app mostra tempo e trajeto, e deixamos o cão pronto antes de você tocar o interfone.</p></div></div></section>
+<section><div class="wrap"><div class="title"><h2>Pré-requisitos</h2></div><details open><summary>Ver lista completa</summary><ul class="ck">${pre()}</ul></details></div></section>${cta()}`,
+'hotel':()=>ph('Hotel')+`<section><div class="wrap two"><div class="rv"><p>Para o tutor viajar tranquilo, oferecemos hospedagem com monitoramento dia e noite. Unimos o conforto e a qualidade do Day Care durante o dia, junto à matilha, a noites tranquilas, aconchegantes e com liberdade, <b>sem baias</b>.</p><h4 style="margin:18px 0 6px">Hospedagem disponível em</h4><ul class="ck"><li><b>Unidade 1 – Chácara Santo Antônio</b><br>Rua Capitão Otávio Machado, 953</li><li><b>Unidade 3 – Consulado (pequeno porte)</b><br>Rua da Paz, 909</li></ul></div><div class="card rv"><h3>🛎️ Funcionamento</h3><div class="tl" style="margin-top:14px"><div><b>Diárias</b><br>Por noite ou por período, todos os dias da semana.</div><div><b>Check-in e check-out</b><br>Até o meio-dia (12h).</div><div><b>Late check-out</b><br>Até 18h, meia diária na tabela vigente.</div></div></div></div></section>
+<section><div class="wrap"><div class="panel rv"><h3>🐾 Dia experimental, sem custo</h3><p style="margin-top:8px">Antes da primeira hospedagem, seu cão passa por uma avaliação comportamental gratuita para avaliarmos saúde, comportamento e socialização com a matilha.</p></div></div></section>
+<section><div class="wrap"><div class="title"><h2>Pré-requisitos</h2></div><details><summary>Ver lista completa</summary><ul class="ck">${pre()}</ul></details></div></section>${cta('Reserve a hospedagem do seu cão')}`,
+'noticias':()=>ph('Notícias')+`<section><div class="wrap grid">${NEWS.map(n=>`<a class="card rv" href="#/noticia/${n[0]}"><div class="ico">${n[2]}</div><p style="font-size:.8rem">Postado ${n[1]}</p><h3>${n[3]}</h3><p style="color:var(--pri);font-weight:800">Leia mais →</p></a>`).join('')}</div></section>`,
+'noticia/app':()=>ph('Comunicação via APP')+`<section><div class="wrap panel rv"><p>Oferecemos um aplicativo para a comunicação diária entre tutor e Pet na Pele. Por ele você recebe informações de como foi o dia no Day Care e guarda todo o histórico de saúde e comportamento do cão em um só lugar.</p><p style="margin-top:10px">O app identifica a localização do tutor e informa tempo e trajeto até o espaço: basta marcar que está a caminho e depois que chegou. Assim nos antecipamos, deixando o cão preparado ou um funcionário pronto antes do interfone, sem espera nem ansiedade excessiva.</p></div></section>`,
+'noticia/adaptacao':()=>ph('Agende sua adaptação')+`<section><div class="wrap panel rv"><p>Antes de ingressar no Day Care ou no Hotel, seu cão passa por um dia experimental, <b>sem custo</b>, para avaliarmos saúde, comportamento e socialização. Preencha abaixo e finalizamos pelo WhatsApp.</p><form class="f" id="ad" style="margin-top:16px"><input name="n" placeholder="Seu nome" required><input name="c" placeholder="Nome do cão" required><select name="u"><option>Unidade 1 – Chácara Santo Antônio</option><option>Unidade 2 – Jardim Marajoara</option><option>Unidade 3 – Consulado (pequeno porte)</option></select><select name="s"><option>Day Care</option><option>Hotel</option></select><button class="btn" type="submit">Agendar pelo WhatsApp</button></form></div></section>`,
+'noticia/requisitos':()=>ph('Pré-requisitos da creche e hotel')+`<section><div class="wrap panel rv"><ul class="ck">${pre()}</ul></div></section>`
+};
+const route=h=>{h=h.replace(/^#\/?/,'');
+ let m;if(m=h.match(/^unidade-(\d)$/))return unit(+m[1]);if(m=h.match(/^contato\/(\d)$/))return contact(+m[1]);return (P[h]||P[''])();};
+function unit(n){const u=U[n-1];return ph(`Unidade ${n} – ${u.nm}`)+`<section><div class="wrap two"><div class="rv"><h3><a href="${u.maps}" target="_blank" rel="noopener" style="color:var(--pri)">📍 ${u.end}</a></h3><p style="margin:10px 0">${u.txt}</p><p>${u.hotel?'🛏️ Day Care e Hotel':'☀️ Day Care'}</p></div><div class="blob" style="max-width:260px;font-size:6rem">${u.emoji}</div></div></section>
+<section><div class="wrap"><div class="title"><h2>Ambientes</h2><p class="mut">Passe o mouse ou toque para conhecer.</p></div><div class="rv" id="rooms">${u.rooms.map(r=>`<button class="room tab" data-d="${r[1]}">${r[0]}</button>`).join('')}</div><div class="panel" id="rd" style="margin-top:12px">Escolha um ambiente.</div></div></section>
+${n!=3?`<section><div class="wrap"><div class="card rv"><h3>🛁 Centro Estético para alunos e hóspedes</h3><p style="margin-top:6px">Banhos molhados e a seco com metodologia <b>low stress</b>, sem as terríveis gaiolas${n==2?' e apenas produtos super premium':''}.</p></div></div></section>`:`<section><div class="wrap"><div class="card rv"><h3>🛁 Centro Estético para alunos e hóspedes</h3><p style="margin-top:6px">Espaço exclusivo, com produtos super premium e metodologia <b>low stress</b>, sem gaiolas.</p></div></div></section>`}
+<section><div class="wrap"><div class="tabs">${U.map(x=>`<a class="tab ${x.n==n?'on':''}" href="#/unidade-${x.n}" style="text-decoration:none">Unidade ${x.n}</a>`).join('')}</div></div></section>${cta()}`}
+function contact(n){const u=U[n-1];return ph('Contatos')+`<section><div class="wrap"><div class="tabs">${U.map(x=>`<a class="tab ${x.n==n?'on':''}" href="#/contato/${x.n}" style="text-decoration:none">Unidade ${x.n} – ${x.nm}</a>`).join('')}</div><div class="two"><div class="panel rv"><h3>${u.emoji} ${u.nm}</h3><p style="margin:10px 0">📍 ${u.end}</p><p>📞 <a href="tel:+5511993484746">(11) 99348.4746</a></p><p>✉️ <a href="mailto:contato@petnapele.com.br">contato@petnapele.com.br</a></p><p style="margin-top:16px"><a class="btn" href="${u.maps}" target="_blank" rel="noopener">Abrir no Google Maps</a> <a class="btn alt" href="https://wa.me/5511993484746" target="_blank" rel="noopener">WhatsApp</a></p></div><div class="panel rv"><h3>Redes sociais</h3><p style="margin:10px 0"><a href="https://www.instagram.com/petnapele" target="_blank" rel="noopener">📸 Instagram @petnapele</a></p><p><a href="https://www.facebook.com/petnapele" target="_blank" rel="noopener">👍 Facebook /petnapele</a></p></div></div></div></section>`}
+function wire(){
+ document.querySelectorAll('.rv').forEach(e=>io.observe(e));
+ document.querySelectorAll('[data-n]').forEach(e=>{const t=+e.dataset.n;let c=0;const s=setInterval(()=>{c+=Math.max(1,Math.ceil(t/40));if(c>=t){c=t;clearInterval(s)}e.textContent=c},30)});
+ const eat=document.getElementById('eat');if(eat){const show=i=>{document.getElementById('eap').innerHTML=`<h3>${EA[i][0]} ${EA[i][1]}</h3><p style="margin-top:8px">${EA[i][2]}</p>`;eat.querySelectorAll('.tab').forEach((b,j)=>b.classList.toggle('on',i==j))};eat.onclick=e=>{const b=e.target.closest('.tab');if(b)show(+b.dataset.i)};show(0)}
+ const r=document.getElementById('rooms');if(r){const rd=document.getElementById('rd');r.querySelectorAll('.room').forEach(b=>{const f=()=>rd.innerHTML=`<b>${b.textContent}:</b> ${b.dataset.d}`;b.onmouseenter=f;b.onclick=f})}
+ const ad=document.getElementById('ad');if(ad)ad.onsubmit=e=>{e.preventDefault();const d=new FormData(ad);const t=`Olá! Sou ${d.get('n')} e gostaria de agendar o dia experimental do(a) ${d.get('c')} para ${d.get('s')} na ${d.get('u')}.`;window.open('https://wa.me/5511993484746?text='+encodeURIComponent(t),'_blank')}}
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+function render(){const h=location.hash||'#/';document.getElementById('app').innerHTML=route(h);document.querySelectorAll('nav a').forEach(a=>a.classList.toggle('on',a.getAttribute('href')===h));document.getElementById('nav').classList.remove('open');scrollTo(0,0);document.title='Pet na Pele – Daycare e Hotel para Cães';wire()}
+document.getElementById('foot').innerHTML=U.map(u=>`<div><h4>${u.nm}</h4><p>${u.end}</p><p>(11) 99348.4746</p></div>`).join('')+`<div><h4>Sobre nós</h4><p>O Pet na Pele nasceu para proporcionar maior qualidade de vida aos cães, com excelência nos serviços e amor ao que fazemos.</p></div>`;
+document.getElementById('burger').onclick=()=>document.getElementById('nav').classList.toggle('open');
+document.getElementById('theme').onclick=()=>{const r=document.documentElement,d=matchMedia('(prefers-color-scheme:dark)').matches;const cur=r.dataset.theme||(d?'dark':'light');r.dataset.theme=cur=='dark'?'light':'dark'};
+const pets=document.getElementById('pets');let lastY=0,wt;
+function movePets(){const mx=document.documentElement.scrollHeight-innerHeight;const p=mx>0?Math.min(1,scrollY/mx):0;pets.style.transform=`translateX(${p*(innerWidth-pets.offsetWidth)}px)`;if(scrollY!==lastY){pets.classList.toggle('back',scrollY<lastY);lastY=scrollY}pets.classList.add('walk');clearTimeout(wt);wt=setTimeout(()=>pets.classList.remove('walk'),160)}
+addEventListener('scroll',movePets,{passive:true});addEventListener('resize',movePets);
+addEventListener('hashchange',render);render();
+</script>
+</body>
+</html>
